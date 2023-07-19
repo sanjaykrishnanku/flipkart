@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>flipcart clone</title>
+    <link rel="stylesheet" href="flipkart-clone-style.css">
+    <link rel="shortcut icon"
+        href="data:image/jpeg;base64,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">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container" id="a">
+            <div class="logo">
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"
+                    alt="logo">
+            </div>
+            <div class="search">
+                <div class="search-container">
+                    <input type="text" class="search-box" placeholder="search for products,brands & more">
+                    <button class="search-button">
+                        <svg width="20" height="20" viewBox="0 0 17 18" class="" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="#2874F1" fill-rule="evenodd">
+                                <path class="_34RNph"
+                                    d="m11.618 9.897l4.225 4.212c.092.092.101.232.02.313l-1.465 1.46c-.081.081-.221.072-.314-.02l-4.216-4.203">
+                                </path>
+                                <path class="_34RNph"
+                                    d="m6.486 10.901c-2.42 0-4.381-1.956-4.381-4.368 0-2.413 1.961-4.369 4.381-4.369 2.42 0 4.381 1.956 4.381 4.369 0 2.413-1.961 4.368-4.381 4.368m0-10.835c-3.582 0-6.486 2.895-6.486 6.467 0 3.572 2.904 6.467 6.486 6.467 3.582 0 6.486-2.895 6.486-6.467 0-3.572-2.904-6.467-6.486-6.467">
+                                </path>
+                            </g>
+                        </svg>
+
+                    </button>
+                </div>
+            </div>
+            <div class="login">
+                <button>Login</button>
+            </div>
+            <div class="become-seller">
+                Become Seller
+
+            </div>
+            <div class="more">
+                More
+                <svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="zZ3yfL">
+                    <path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#fff"
+                        class="_2gTTdy"></path>
+                </svg>
+
+            </div>
+            <div class="cart">
+                <svg class="V3C5bO" width="14" height="14" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path class="_1bS9ic"
+                        d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86"
+                        fill="#fff"></path>
+                </svg>
+                Cart
+            </div>
+        </div>
+    </header>
+    <section class="section-1">
+        <div class="section-1-container">
+            <div class="section-1-item">
+                <img src="https://rukminim2.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="grocery">
+                Grocery
+            </div>
+            <div class="section-1-item">
+                <img src="https://rukminim2.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100" alt="mobiles">
+                Mobiles
+            </div>
+            <div class="section-1-item">
+                <img src="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/0d75b34f7d8fbcb3.png?q=100"
+                    alt="Fashion">
+                Fasion
+            </div>
+            <div class="section-1-item">
+                <img src="https://rukminim2.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100"
+                    alt="electronics">
+                Electronics
+            </div>
+            <div class="section-1-item">
+                <img src=" https://rukminim2.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100"
+                    alt="home&furniture">
+                Home & Furniture
+            </div>
+            <div class="section-1-item">
+                <img src="https://rukminim2.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100"
+                    alt="appliances">
+                Appliances
+            </div>
+            <div class="section-1-item">
+                <img src="https://rukminim2.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100" alt="Travel">
+                Travel
+            </div>
+            <div class="section-1-item">
+                <img src="https://rukminim2.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100"
+                    alt="top offers">
+                Top Offers
+            </div>
+            <div class="section-1-item">
+                <img src="https://rukminim2.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100"
+                    alt="toys & more">
+                Beauty toys & More
+            </div>
+            <div class="section-1-item">
+                <img src="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/05d708653beff580.png?q=100"
+                    alt="two wheelers">
+                Two Wheelers
+            </div>
+
+
+        </div>
+
+    </section>
+    <section>
+        <div class="section-2">
+            <section class="section-2-container">
+                <div class="section-2-container-img">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/ed12b7707a04473c.jpg?q=20" alt="">
+                </div>
+                <div class="section-2-container-img">
+                    <img src="https://rukminim2.flixcart.com/fk-p-flap/3376/560/image/aa1b2bdcf519b468.jpg?q=50" alt="">
+                </div>
+                <div class="section-2-container-img">
+                    <img src="https://rukminim2.flixcart.com/fk-p-flap/3376/560/image/a7829da5d95efc3b.jpg?q=50" alt="">
+                </div>
+            </section>
+            
+            
+        </div>
+    </section>
+
+    <section class="section-3-container">
+        <div class="section-3-container">
+            <div class="section-3-offers">
+                <div class="section-3-offers-viewall">
+                    Best of Electronics
+                    <a
+                        href="https://www.flipkart.com/offers-list/content?screen=dynamic&pk=themeViews%3DDT-OMU-1%3ADealcard~widgetType%3DdealCard~contentType%3Dneo&wid=2.dealCard.OMU&wid=3.dealCard.OMU_3&otracker=hp_omu_Best%2Bof%2BElectronics_3&otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_wc_view-all_3"><button>view
+                            all</button></a>
+                </div>
+
+            </div>
+            <div class="section-3-list">
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/l4x2rgw0/monitor/n/y/y/q24i-20-full-hd-23-8-66eegac3in-lenovo-original-imagfpgxzsk8ef26.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">Printers</div>
+                    <div class="section-3-item-price">From ₹3999</div>
+                    <div class="section-3-item-explore">Hp</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/printer/j/j/y/hp-laserjet-m1005-multifunction-original-imadxhzpeb9qbrfg.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">Monitors</div>
+                    <div class="section-3-item-price">From ₹5999</div>
+                    <div class="section-3-item-explore">lenovo</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/xif0q/power-bank/d/a/f/-original-imagky3e8yp5ebvr.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">Power bank</div>
+                    <div class="section-3-item-price">From ₹1999</div>
+                    <div class="section-3-item-explore">realme, Mi & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/kthjy4w0/dslr-camera/c/q/o/alpha-ilce-1-full-frame-digital-slr-camera-8k-50mop-30-fps-real-original-imag6thaygyzrgnx.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">Top Mirrorless cameras</div>
+                    <div class="section-3-item-price">Shop Now</div>
+                    <div class="section-3-item-explore">Canon,Sony</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/kx50gi80/projector/r/9/p/zeb-pixa-play-12-5-6-dobly-audio-led-projector-zebronics-original-imag9z3yujqmzqt4.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">camera</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/l4x2rgw0/monitor/n/y/y/q24i-20-full-hd-23-8-66eegac3in-lenovo-original-imagfpgxzsk8ef26.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">Printers</div>
+                    <div class="section-3-item-price">From ₹3999</div>
+                    <div class="section-3-item-explore">Hp</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/printer/j/j/y/hp-laserjet-m1005-multifunction-original-imadxhzpeb9qbrfg.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">Monitors</div>
+                    <div class="section-3-item-price">From ₹5999</div>
+                    <div class="section-3-item-explore">lenovo</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/xif0q/power-bank/d/a/f/-original-imagky3e8yp5ebvr.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">Power bank</div>
+                    <div class="section-3-item-price">From ₹1999</div>
+                    <div class="section-3-item-explore">realme, Mi & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/kthjy4w0/dslr-camera/c/q/o/alpha-ilce-1-full-frame-digital-slr-camera-8k-50mop-30-fps-real-original-imag6thaygyzrgnx.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">Top Mirrorless cameras</div>
+                    <div class="section-3-item-price">Shop Now</div>
+                    <div class="section-3-item-explore">Canon,Sony</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/kx50gi80/projector/r/9/p/zeb-pixa-play-12-5-6-dobly-audio-led-projector-zebronics-original-imag9z3yujqmzqt4.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">camera</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="section-3-container">
+        <div class="section-3-container">
+            <div class="section-3-offers">
+                <div class="section-3-offers-viewall">
+                    Electronics
+                    <a
+                        href="https://www.flipkart.com/offers-list/content?screen=dynamic&pk=themeViews%3DDT-OMU-1%3ADealcard~widgetType%3DdealCard~contentType%3Dneo&wid=2.dealCard.OMU&wid=3.dealCard.OMU_3&otracker=hp_omu_Best%2Bof%2BElectronics_3&otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_wc_view-all_3"><button>view
+                            all</button></a>
+                </div>
+
+            </div>
+            <div class="section-3-list">
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/kdbzqfk0/bar/8/h/q/push-up-bar-0-8-long-ankaro-original-imafu9dmvdk3rzvy.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">Gym essentials</div>
+                    <div class="section-3-item-price">From ₹199</div>
+                    <div class="section-3-item-explore">Shop Now</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/kzegk280/action-figure/9/v/t/3-30155-mcfarlane-2-5-original-imagbeyyzehpyk2m.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">Tricycles & Rideons</div>
+                    <div class="section-3-item-price">Up to 70% Off</div>
+                    <div class="section-3-item-explore">Figurines, Battle Toys & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/image/200/200/l58iaa80/electric-cycle/i/y/f/-original-imagfykthgudy4qz.jpeg?q=70"
+                        alt="">
+                    <div class="section-3-item-head">Geared Cycles</div>
+                    <div class="section-3-item-price">From ₹3999</div>
+                    <div class="section-3-item-explore">Leader, Cradiac & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="section-3-container">
+        <div class="section-3-container">
+            <div class="section-3-offers">
+                <div class="section-3-offers-viewall">
+                    Electronics
+                    <a
+                        href="https://www.flipkart.com/offers-list/content?screen=dynamic&pk=themeViews%3DDT-OMU-1%3ADealcard~widgetType%3DdealCard~contentType%3Dneo&wid=2.dealCard.OMU&wid=3.dealCard.OMU_3&otracker=hp_omu_Best%2Bof%2BElectronics_3&otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_wc_view-all_3"><button>view
+                            all</button></a>
+                </div>
+
+            </div>
+            <div class="section-3-list">
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="section-3-container">
+        <div class="section-3-container">
+            <div class="section-3-offers">
+                <div class="section-3-offers-viewall">
+                    Electronics
+                    <a
+                        href="https://www.flipkart.com/offers-list/content?screen=dynamic&pk=themeViews%3DDT-OMU-1%3ADealcard~widgetType%3DdealCard~contentType%3Dneo&wid=2.dealCard.OMU&wid=3.dealCard.OMU_3&otracker=hp_omu_Best%2Bof%2BElectronics_3&otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_wc_view-all_3"><button>view
+                            all</button></a>
+                </div>
+
+            </div>
+            <div class="section-3-list">
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="section-3-container">
+        <div class="section-3-container">
+            <div class="section-3-offers">
+                <div class="section-3-offers-viewall">
+                    Electronics
+                    <a
+                        href="https://www.flipkart.com/offers-list/content?screen=dynamic&pk=themeViews%3DDT-OMU-1%3ADealcard~widgetType%3DdealCard~contentType%3Dneo&wid=2.dealCard.OMU&wid=3.dealCard.OMU_3&otracker=hp_omu_Best%2Bof%2BElectronics_3&otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_wc_view-all_3"><button>view
+                            all</button></a>
+                </div>
+
+            </div>
+            <div class="section-3-list">
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+                <div class="section-3-item">
+                    <img src="https://rukminim2.flixcart.com/flap/200/200/image/20c224cd52ae7a87.jpg?q=70" alt="">
+                    <div class="section-3-item-head">Best of Trimmers</div>
+                    <div class="section-3-item-price">From ₹399</div>
+                    <div class="section-3-item-explore">realme, Mi, Philips & more</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="section-footer-1">
+
+    </section>
+    <section class="section-footer-2">
+        <div class="section-footer-2-text">
+            <p>Top Stories:Brand Directory<br><br>
+                MOST SEARCHED FOR ON FLIPKART:One PiecesFashion EOSS SaleTrend StopFlipkart Axis Bank Super Elite Credit
+                card5G Mobile PhonesPrimebook LaptopsMoto Edge 40Bounce Infinity E1Buy Laptop on EMIInfinix Zero Book
+                UltraOPPO Reno8 5GOPPO Reno8 Pro 5GFresh Flower BouquetElectric CyclesBadmintonBouquetLaptop Repair
+                ServicesAC Cleaning ServicesOneplus MonitorsGrievance RedressalMobile Repair ServicesSell Old Mobile
+                PhonesPremium LaptopsElectronics StorePhone coverInfinix INBook Y1 PlusOkaya Electric Vehiclesbgauss
+                electric scooterOPPO Reno7 Pro 5GiPhone 13iPhone 13 ProiPhone 13 Pro MaxiPhone 13 MiniGoogle Pixel 6a
+                coversFlipkart QuickAmpere MagnusFlipkart Help CentreOnline Boat StoreCovers from Rs 99Flipkart Track
+                OrdersFlipkart Manage OrdersFlipkart Return OrdersFlipkart Gift Cards StoreFlipkart Axis Bank Credit
+                CardFlipkart Pay Later
+                <br>
+            <h4>MOBILES</h4>:iPhone 12 64GBiPhone 12 Pro 512GBiPhone 12 128GBVivo Y91iVivo Y11Vivo Y15Nothing PhoneVivo
+            Y50Vivo Y12Reno2 FOppo A12Nothing Phone 5gGoogle Pixel 5g PhoneMotorola 5g PhoneRealme 5g SmartphoneApple 5g
+            PhoneIqoo 5g PhonesOneplus 5g PhonesVivo 5g PhonesOppo 5g Smart PhonesOppo F15Oppo A31Samsung A71Samsung
+            A51Samsung A31Realme X2iPhone 11iPhone 11 ProMobile CoverMobile Offersiphone x4G MobileNokia MobileSamsung
+            MobileiphoneOppo MobileVivo Mobile
+            <br>
+            <h4>CAMERA</h4>:GoPro Action CameraNikon CameraCanon CameraSony CameraCanon DSLRNikon DSLR
+            <br>
+            <h4>LAPTOPS</h4>:Asus ROG AllyMacBook Pro M2Premium LaptopASUS ROG Strix SCAR 16 (2023) Core i9 13th GenASUS
+            ROG Zephyrus M16 (2023) Core i9 13th GenASUS Zenbook 14 OLED (2022)Realme Book Prime Core i5 11th
+            GenMicrosoft Surface Go Pentium 128GBBranded LaptopsApple LaptopsAcer LaptopsLenovo LaptopsDell LaptopsAsus
+            LaptopsHP LaptopsGaming Laptops2 in 1 LaptopsLaptopsDell latest laptops 2022HP latest laptops 2022Infinix
+            INBook Y1 PlusSAMSUNG Galaxy Book312th Gen Intel Core Laptops
+            <br>
+            <h4>TVS</h4>:Nokia TVPanasonic TVThomson TVMi X ProRealme TVMotorola TVOnePlus TVsLG TVTVSony TVSamsung
+            TVAndroid TelevisionIffalcon TvMi TV
+            <br>
+            <h4>LARGE APPLIANCES</h4>:TV & Appliances End of Season SaleTelevisionWashing MachinesRefrigeratorsAir
+            ConditionersElectric CookersElectric Jug(Heater) / Travel KettlesInduction CooktopsInverters /
+            stabilizerIrons / Iron BoxMixer Grinder JuicerWet GrindersChimneysMicrowave OvensVacuum CleanersWater
+            PurifierFanMarQ Customer Care
+            <br>
+            <h4>CLOTHING</h4>:Green bridal lehengaBridal BlouseHalf saree blouse designsDesigner blousesBlouse
+            designsMen ShirtsPlain suit with heavy dupattaHalf saree for kidsCotton saree blouse designsKurta PajamaMen
+            T-ShirtsNew blouse designJeansBridal designer blouseSimple aari work blouse designsBridal banarasi
+            sareesSareeHigh waist pantiesHooded jacket womenDressesHoodie tshirts for menOne piecesHip hop cap for
+            menGroom wedding sherwaniDesigner Salwar SuitsBraAari work blouse hand designsCotton simple blouse
+            designsBanarasi saree blouse designsDesigner KurtisStylish blouse astin designTrack PantBlouse neck
+            designsMen KurtasV neck blouse designsGym WearParty DressesPalazzo SuitsBoys ClothingGlovesNightyMaxi
+            DressesAnarkaliGownsCulottesSalwar SuitsKurtisDesigner SareesLeggingsShortsGeorgette SareesEthnic WearBriefs
+            & TrunksNike WatchesWomen henleyuppada pattu sareesBlouse back designLeopard dressesSleeveless shrugsLatest
+            blouse designsSimple Blouse designs
+            <br>
+            <h4>FOOTWEAR</h4>:ShoesAdidas ShoesReebok ShoesNike ShoesPuma ShoesBootsBata ShoesWoodland ShoesSkechers
+            ShoesSneakersWomens BootsSports ShoesLoafersSandalsLotto Sports ShoesCasual ShoesWomens Skechers ShoesAsics
+            Sports ShoesFormal ShoesSchool Shoes
+            <br>
+            <h4>GROCERIES</h4>:PhonePe Grocery VoucherHand WashSoapCashew NutsSunflower OilEggsToilet CleanerHarpic
+            Toilet CleanerDettol SoapMustard OilBiscuitsCheesePatanjali AttaFortune OilAashirvaad AttaTea
+            <br>
+            <h4>BEST SELLING ON FLIPKART</h4>:Fire-Boltt Ninja Calling Pro Bluetooth Calling Smartwatch 1.69 inch HD
+            Display SmartwatchBest Gas GeyserKitchen GeyserNutri BlendersPortable Air CoolerBest Air CoolerBagsHitachi
+            Refrigerator 3 DoorBooksToysCandlesHelmetsWall ClocksBaby FoodChocolatesCyclesCalculatorsLipsticksMaskVertiv
+            UPSFastrack WatchesWalletsEarringsGold CoinsRealme Pad MiniHandbagsconekt SW2 SmartwatchMivi DuoPods
+            a350Speaker Cleaner
+            <br>
+            <h4>FURNITURE</h4>:FurnitureSofasBedsDining setsWardrobesMattressesTV UnitsTablesChairsShelvesBean
+            BagsOffice ChairsComputer TableOffice TablesRed SofaWakefit BedsWhite SofaWakefit MattressGreen SofaBlack
+            SofaBrown Sofa
+            <br>
+            <h4>BGMH</h4>:Whey ProteinHomeopathyCricketCyclesFootballsTreadmillsChristmas GiftsFitness AccessoriesOnline
+            GuitarBooks StoreMusical Instrument StoreDabur ChyawanprashBaidyanath ChyawanprashEnergy DrinksToysMilk
+            Drink MixesRakhiChyawanprashIndian FlagProtein Supplements
+            <br><br>Flipkart: The One-stop Shopping Destination
+            <br><br>E-commerce is revolutionizing the way we all shop in India. Why do you want to hop from one store to
+            another in search of the latest phone when you can find it on the Internet in a single click? Not only
+            mobiles. Flipkart houses everything you can possibly imagine, from trending electronics like laptops,
+            tablets, smartphones, and mobile accessories to in-vogue fashion staples like shoes, clothing and lifestyle
+            accessories; from modern furniture like sofa sets, dining tables, and wardrobes to appliances that make your
+            life easy like washing machines, TVs, ACs, mixer grinder juicers and other time-saving kitchen and small
+            appliances; from home furnishings like cushion covers, mattresses and bedsheets to toys and musical
+            instruments, we got them all covered. You name it, and you can stay assured about finding them all here. For
+            those of you with erratic working hours, Flipkart is your best bet. Shop in your PJs, at night or in the wee
+            hours of the morning. This e-commerce never shuts down.
+
+            <br>What's more, with our year-round shopping festivals and events, our prices are irresistible. We're sure
+            you'll find yourself picking up more than what you had in mind. If you are wondering why you should shop
+            from Flipkart when there are multiple options available to you, well, the below will answer your question.
+            <br>
+            <br>
+            <h4>Flipkart Plus</h4>
+            <br>A world of limitless possibilities awaits you - Flipkart Plus was kickstarted as a loyalty reward
+            programme for all its regular customers at zero subscription fee. All you need is 500 supercoins to be a
+            part of this service. For every 100 rupees spent on Flipkart order, Plus members earns 4 supercoins &
+            non-plus members earn 2 supercoins. Free delivery, early access during sales and shopping festivals,
+            exchange offers and priority customer service are the top benefits to a Flipkart Plus member. In short, earn
+            more when you shop more!
+            <br>
+            <br>What's more, you can even use the Flipkart supercoins for a number of exciting services, like:
+            <br>An annual Zomato Gold membership
+            <br>An annual Hotstar Premium membership
+            <br>6 months Gaana plus subscription
+            <br>Rupees 550 instant discount on flights on ixigo
+            <br>Check out https://www.flipkart.com/plus/all-offers for the entire list. Terms and conditions apply.
+            <br>
+            <br>
+            <h4>No Cost EMI</h4>
+            <br>In an attempt to make high-end products accessible to all, our No Cost EMI plan enables you to shop with
+            us under EMI, without shelling out any processing fee. Applicable on select mobiles, laptops, large and
+            small appliances, furniture, electronics and watches, you can now shop without burning a hole in your
+            pocket. If you've been eyeing a product for a long time, chances are it may be up for a no cost EMI. Take a
+            look ASAP! Terms and conditions apply.
+            <br>
+            <br>
+            <h4>EMI on Debit Cards</h4>
+            <br>Did you know debit card holders account for 79.38 crore in the country, while there are only 3.14 crore
+            credit card holders? After enabling EMI on Credit Cards, in another attempt to make online shopping
+            accessible to everyone, Flipkart introduces EMI on Debit Cards, empowering you to shop confidently with us
+            without having to worry about pauses in monthly cash flow. At present, we have partnered with Axis Bank,
+            HDFC Bank, State Bank of India and ICICI Bank for this facility. More power to all our shoppers! Terms and
+            conditions apply.
+            <br>
+            <br>
+            <h4>Mobile Exchange Offers</h4>
+            <br>Get an instant discount on the phone that you have been eyeing on. Exchange your old mobile for a new
+            one after the Flipkart experts calculate the value of your old phone, provided it is in a working condition
+            without damage to the screen. If a phone is applicable for an exchange offer, you will see the 'Buy with
+            Exchange' option on the product description of the phone. So, be smart, always opt for an exchange wherever
+            possible. Terms and conditions apply.
+            <br>
+            <br>h4>What Can You Buy From Flipkart?</h4>
+            <br>
+            <h4>Mobile Phones</h4>
+            <br>From budget Top Stories:Brand Directoryphones to state-of-the-art smartphones, we have a mobile for
+            everybody out there. Whether you're looking for larger, fuller screens, power-packed batteries, blazing-fast
+            processors, beautification apps, high-tech selfie cameras or just large internal space, we take care of all
+            the essentials. Shop from top brands in the country like Samsung, Apple, Oppo, Xiaomi, Realme, Vivo, and
+            Honor to name a few. Rest assured, you're buying from only the most reliable names in the market. What's
+            more, with Flipkart's Complete Mobile Protection Plan, you will never again find the need to run around
+            service centres. This plan entails you to a number of post-purchase solutions, starting at as low as Rupees
+            99 only! Broken screens, liquid damage to phone, hardware and software glitches, and replacements - the
+            Flipkart Complete Mobile Protection covers a comprehensive range of post-purchase problems, with
+            door-to-door services.
+            <br>
+            <br>
+            <h4>Electronic Devices and Accessories</h4>
+            <br>When it comes to laptops, we are not far behind. Filter among dozens of super-fast operating systems,
+            hard disk capacity, RAM, lifestyle, screen size and many other criterias for personalized results in a
+            flash. All you students out there, confused about what laptop to get? Our Back To College Store segregates
+            laptops purpose wise (gaming, browsing and research, project work, entertainment, design, multitasking) with
+            recommendations from top brands and industry experts, facilitating a shopping experience that is quicker and
+            simpler.
+
+            <br><br>Photography lovers, you couldn't land at a better page than ours. Cutting-edge DSLR cameras, ever
+            reliable point-and-shoot cameras, millennial favourite instant cameras or action cameras for adventure
+            junkies: our range of cameras is as much for beginners as it is for professionals. Canon, Nikon, GoPro,
+            Sony, and Fujifilm are some big names you'll find in our store. Photography lovers, you couldn't land at a
+            better page than ours. Cutting-edge DSLR cameras, ever reliable point-and-shoot cameras, millennial
+            favourite instant cameras or action cameras for adventure junkies: our range of cameras is as much for
+            beginners as it is for professionals. Canon, Nikon, GoPro, Sony, and Fujifilm are some big names you'll find
+            in our store.
+
+            <br><br>Turn your home into a theatre with a stunning surround sound system. Choose from our elaborate range
+            of Sony home theatres, JBL soundbars and Philips tower speakers for an experience to remember.
+
+            <br><br>How about jazzing up your phone with our quirky designer cases and covers? Our wide-ranging mobile
+            accessories starting from headphones, power banks, memory cards, mobile chargers, to selfie sticks can prove
+            to be ideal travel companions for you and your phone; never again worry about running out of charge or
+            memory on your next vacation.
+
+            <br><br>
+            <h4>Large Appliances</h4>
+            <br>Sleek TVs, power-saving refrigerators, rapid-cooling ACs, resourceful washing machines - discover
+            everything you need to run a house under one roof. Our Dependable TV and Appliance Store ensures zero
+            transit damage, with a replacement guarantee if anything goes wrong; delivery and installation as per your
+            convenience and a double warranty (Official Brand Warranty along with an extended Flipkart Warranty) - rest
+            assured, value for money is what is promised and delivered. Shop from market leaders in the country like
+            Samsung, LG, Whirlpool, Midea, Mi, Vu, Panasonic, Godrej, Sony, Daikin, and Hitachi among many others.
+
+            <br><br>For certain product categories, Customers meeting the eligibility criteria will have the option to
+            buy larger quantities. To know more on the eligibility criteria and terms and conditions, please reach out
+            to Purchases.oni@flipkart.com.
+
+            <br>
+            <h4>Small Home Appliances</h4>
+            <br>Find handy and practical home appliances designed to make your life simpler: electric kettles, OTGs,
+            microwave ovens, sandwich makers, hand blenders, coffee makers, and many more other time-saving appliances
+            that are truly crafted for a quicker lifestyle. Live life king size with these appliances at home.
+
+            <br><br>
+            <h4>Lifestyle</h4>
+            <br>Flipkart, 'India ka Fashion Capital', is your one-stop fashion destination for anything and everything
+            you need to look good. Our exhaustive range of Western and Indian wear, summer and winter clothing, formal
+            and casual footwear, bridal and artificial jewellery, long-lasting make-up, grooming tools and accessories
+            are sure to sweep you off your feet. Shop from crowd favourites like Vero Moda, Forever 21, Only, Arrow,
+            Woodland, Nike, Puma, Revlon, Mac, and Sephora among dozens of other top-of-the-ladder names. From summer
+            staple maxi dresses, no-nonsense cigarette pants, traditional Bandhani kurtis to street-smart biker jackets,
+            you can rely on us for a wardrobe that is up to date. Explore our in-house brands like Metronaut, Anmi, and
+            Denizen, to name a few, for carefully curated designs that are the talk of the town. Get ready to be spoiled
+            for choice.Festivals, office get-togethers, weddings, brunches, or nightwear - Flipkart will have your back
+            each time.
+
+            <br><br>
+            <h4>Home and Furniture</h4>
+            <br>Moving to a new place is never easy, especially if you're buying new furniture. Beds, sofa sets, dining
+            tables, wardrobes, and TV units - it's not easy to set up everything again. With the hundreds of options
+            thrown at you, the ride could be overwhelming. What place is reliable, what furniture will stand the test of
+            time? These are questions you must ask before you choose a store. Well, our Durability Certified Furniture
+            Store has not only curated a range of furniture keeping in mind the modern Indian consumer but furniture
+            that comes with a lab certification, ensuring they last you for up to 10 years. Yes, all our furniture has
+            gone through 35 stability and load tests so that you receive only the best-quality furniture. Be FurniSure,
+            always. Names to look out for are Nilkamal, Godrej Interio, Urban Ladder, HomeTown, Durian and Perfect
+            Homes.
+
+            <br><br>You may have your furniture all set up, but they could end up looking flat and incomplete without
+            complementary decor. Curtains, cushion covers, bed sheets, wall shelves, paintings, floor lamps - find
+            everything that turns a house to an inviting home under one roof at Flipkart.
+
+            <br><br>
+            <h4>Baby and Kids</h4>
+            <br>Your kids deserve only the best. From bodysuits, booties, diapers to strollers, if you're an expecting
+            mother or a new mother, you will find everything you need to set sail on a smooth parenting journey with the
+            help of our baby care collection. When it comes to safety, hygiene and comfort, you can rely on us without a
+            second thought. Huggies, Pampers, MamyPoko, and Johnson & Johnson: we host only the most-trusted names in
+            the business for your baby.
+
+            <br><br>
+            <h4>Books, Sports and Games</h4>
+            <br>Work hard and no play? We don't believe in that. Get access to best-selling fiction and non-fiction
+            books by your favourite authors, thrilling English and Indian blockbusters, most-wanted gaming consoles, and
+            a tempting range of fitness and sports gadgets and equipment bound to inspire you to get moving.
+
+            <br><br>
+            <h4>Grocery/Supermart</h4>
+            <br>Launching into the grocery vertical, Flipkart introduces Supermart that is out to bring everyday
+            essentials close to you. From pulses, spices, dairy, personal and sanitary care, breakfast essentials,
+            health drinks, spreads, ready to cook, grooming to cleaning agents, we are happy to present everything you
+            need to run a house. Now buy Grocery products for as low as 1 Rupee only - our 1 Rupee Store presents new
+            products every day for a nominal price of 1 Rupee only. Terms and conditions apply.<br><br><br>
+            </p>
+        </div>
+    </section>
+    <section class="section-footer-1">
+        <div class="section-footer-1-container">
+            <div class="section-footer-1-items">
+                <p>
+                <h5>ABOUT</h5>
+                Contact Us<br>
+                About Us<br>
+                Careers<br>
+                Flipkart Storiesbr<br>
+                Press<br>
+                Flipkart Wholesale<br>
+                Corporate Information</p>
+            </div>
+            <div class="section-footer-1-items">
+                <p>
+                <h5>HELP</h5>
+                Payments<br>
+                Shipping<br>
+                Cancellation & Returns<br>
+                FAQ<br>
+                Report Infringement</p>
+            </div>
+            <div class="section-footer-1-items">
+                <p>
+                <h5>CONSUMER POLICY</h5>
+                Return Policy<br>
+                Terms Of Use<br>
+                Security<br>
+                Privacy<br>
+                Sitemap<br>
+                Grievance Redressal<br>
+                EPR Compliance</p>
+            </div>
+            <div class="section-footer-1-items">
+                <p>
+                <h5>SOCIAL</h5>
+                Facebook<br>
+                Twitter<br>
+                YouTube</p>
+            </div>
+            <div class="section-footer-1-items mailus">
+                <p>
+                <h5>Mail Us:</h5>
+                Flipkart Internet Private Limited,<br>
+                Buildings Alyssa, Begonia &<br>
+                Clove Embassy Tech Village,<br>
+                Outer Ring Road, Devarabeesanahalli Village,<br>
+                Bengaluru, 560103,<br>
+                Karnataka, India<br>
+                </p>
+            </div>
+            <div class="section-footer-1-items adress">
+                <p>
+                <h5>Registered Office Address:</h5>
+                Flipkart Internet Private Limited,<br>
+                Buildings Alyssa, Begonia &<br>
+                Clove Embassy Tech Village,<br>
+                Outer Ring Road, Devarabeesanahalli Village,<br>
+                Bengaluru, 560103,<br>
+                Karnataka, India<br>
+                CIN : U51109KA2012PTC066107<br>
+                Telephone: 044-45614700</p>
+            </div>
+        </div>
+
+    </section>
+    <div class="slideshow">
+        <img src="image1.jpg" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
+      </div>
+
+
+
+
+</body>
+
+</html>
+
+
